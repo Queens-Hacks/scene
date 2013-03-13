@@ -7,6 +7,8 @@ html {
     height: 100%;
 }
 body {
+    margin: 0;
+    padding: 0;
     height: 100%
     position: relative;
     overflow: hidden;
@@ -81,22 +83,31 @@ body {
             360px 0 240px 120px rgba(255, 85, 85, 0.8);
 }
 
+#water {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    perspective: 200px;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+}
+
 #water p {
     margin: 0;
     display: block;
     position: absolute;
-    top: 50%;
+    top: 0;
     background: #48a;
     background-image: -moz-linear-gradient(top, #234 0%, #48a 100%);
     width: 150%;
     margin-left: -25%;
     box-shadow: 0 -4px 4px #234;
     font-size: 2em;
-    color: rgba(0, 0, 0, 0);
-    text-shadow: -3em 0 .5em rgba(255, 255, 255, .5), 3em 0.5em .5em rgba(255, 255, 255, .5);
-
+    color: rgba(255, 255, 255, 0.5);
+/*    text-shadow: -3em 0 .5em rgba(255, 255, 255, .5), 3em 0.5em .5em rgba(255, 255, 255, .5);
+*/
     -moz-animation: mainmove 5s ease-in-out infinite alternate;
-    /*-moz-transform: rotateX(45deg);*/
+    transform: rotateX(45deg);
 }
 
 /*#water p:before,
@@ -107,8 +118,37 @@ body {
     position: absolute;
     top: 11px;
     content: attr(data-wave);
-    text-shadow: -3em 0 .5em rgba(255, 255, 255, .5), 3em 0.5em .5em rgba(255, 255, 255, .5);
-    -moz-animation: beforemove 4.5s ease-in-out infinite alternate;
+/*    text-shadow: -3em 0 .5em rgba(255, 255, 255, .5), 3em 0.5em .5em rgba(255, 255, 255, .5);
+*/    -moz-animation: beforemove 4.5s ease-in-out infinite alternate;
+}
+
+#sailboat {
+    position: absolute;
+    top: 20px;
+    border-top: 30px solid #D4CCC5;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    height: 0;
+    width: 90px;
+}
+#sailboat:before {
+    content: '';
+    position: absolute;
+    bottom: 35px;
+    width: 0;
+    height: 0;
+    border-bottom: 90px solid red;
+    border-left: 30px solid transparent;
+}
+#sailboat:after {
+    content: '';
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    width: 0;
+    height: 0;
+    border-bottom: 90px solid red;
+    border-right: 55px solid transparent;
 }
 
 /*#water p:after {
@@ -120,6 +160,7 @@ body {
         <div id="sun"></div>
         <div id="water">
             <p data-wave="Salvia fanny pack kogi, incididunt anim velit 8-bit cred banksy. +1 scenester accusamus elit, et fixie culpa keytar truffaut Austin kogi wes anderson raw denim tofu williamsburg. Master cleanse incididunt chambray, blog PBR duis velit deserunt. Kogi pinterest accusamus tofu. Aute cred fap, qui odio master cleanse nesciunt mlkshk ut. Labore accusamus craft beer, marfa gentrify in id laborum irure. Typewriter kogi enim do irure, tattooed sustainable small batch qui proident +1 nihil reprehenderit dreamcatcher more pork belly. Sunt anim accusamus, irony cosby sweater quis incididunt retro. Fingerstache messenger bag flexitarian, excepteur narwhal before they sold out cardigan stumptown gentrify vegan. Cray consequat gluten-free cupidatat jean shorts umami. Occupy polaroid typewriter, butcher messenger bag anim gastropub Austin narwhal enim master cleanse consequat keffiyeh organic synth. Banh mi sartorial elit vice, dolor viral incididunt officia kogi selvage. Vice before they sold out ethical nulla direct trade sint. 3 wolf moon brooklyn delectus, salvia craft beer cred duis wolf cardigan dreamcatcher fap selvage. Butcher photo booth brunch terry richardson delectus, placeat Austin four loko odio authentic elit put a bird on it officia lomo biodiesel. Ex fugiat master cleanse, assumenda ut single-origin coffee ethnic DIY. Aliquip anim mlkshk, wolf Austin vinyl sriracha pinterest. Brunch nulla irure ennui in small batch. Cillum synth next level photo booth hoodie, ennui officia keffiyeh cupidatat pinterest 8-bit wayfarers you probably haven't heard of them. Deserunt aliqua fap typewriter. Forage wayfarers labore dolore gentrify enim. Assumenda godard synth blog eiusmod, messenger bag bespoke. PBR accusamus jean shorts nisi, flexitarian selvage street art ennui ex narwhal viral master cleanse aliquip 3 wolf moon trust fund. Mixtape quis vegan high life. Ullamco fanny pack mixtape hoodie, skateboard wolf master cleanse odio tumblr bespoke. Chambray ut williamsburg, mumblecore portland vegan accusamus +1. Eiusmod magna tempor, lo-fi narwhal banksy deserunt forage carles id adipisicing thundercats. Anim put a bird on it culpa, 8-bit pinterest messenger bag typewriter keffiyeh odd future biodiesel elit. Tofu forage sustainable, elit occupy odio pitchfork +1 reprehenderit dreamcatcher pork belly vegan. Banh mi squid ut, accusamus mlkshk art party voluptate. Echo park incididunt vero nostrud, keytar consequat fingerstache. Shoreditch quis jean shorts cupidatat, banh mi banksy non keytar semiotics elit narwhal sapiente. Post-ironic id keytar raw denim. Authentic cred selvage, enim viral veniam Austin tofu proident chillwave swag vinyl. Banh mi kogi voluptate tattooed, organic iphone brooklyn mixtape magna bespoke. Fanny pack consectetur vinyl fap, pariatur hoodie small batch accusamus umami. Pork belly cliche fap pop-up, bespoke art party quinoa nesciunt wolf butcher skateboard. Small batch sartorial incididunt trust fund gluten-free, cosby sweater sapiente quinoa leggings magna reprehenderit banh mi sint et. Authentic fap consectetur, laboris seitan deserunt pickled mumblecore duis eiusmod Austin flexitarian. Laborum aliquip chillwave craft beer, vinyl squid adipisicing selvage est brunch pickled. Ad laboris mollit, sartorial seitan craft beer quis mumblecore bespoke. Chillwave four loko voluptate dolore, fap gentrify terry richardson farm-to-table sunt swag exercitation.">Salvia fanny pack kogi, incididunt anim velit 8-bit cred banksy. +1 scenester accusamus elit, et fixie culpa keytar truffaut Austin kogi wes anderson raw denim tofu williamsburg. Master cleanse incididunt chambray, blog PBR duis velit deserunt. Kogi pinterest accusamus tofu. Aute cred fap, qui odio master cleanse nesciunt mlkshk ut. Labore accusamus craft beer, marfa gentrify in id laborum irure. Typewriter kogi enim do irure, tattooed sustainable small batch qui proident +1 nihil reprehenderit dreamcatcher more pork belly. Sunt anim accusamus, irony cosby sweater quis incididunt retro. Fingerstache messenger bag flexitarian, excepteur narwhal before they sold out cardigan stumptown gentrify vegan. Cray consequat gluten-free cupidatat jean shorts umami. Occupy polaroid typewriter, butcher messenger bag anim gastropub Austin narwhal enim master cleanse consequat keffiyeh organic synth. Banh mi sartorial elit vice, dolor viral incididunt officia kogi selvage. Vice before they sold out ethical nulla direct trade sint. 3 wolf moon brooklyn delectus, salvia craft beer cred duis wolf cardigan dreamcatcher fap selvage. Butcher photo booth brunch terry richardson delectus, placeat Austin four loko odio authentic elit put a bird on it officia lomo biodiesel. Ex fugiat master cleanse, assumenda ut single-origin coffee ethnic DIY. Aliquip anim mlkshk, wolf Austin vinyl sriracha pinterest. Brunch nulla irure ennui in small batch. Cillum synth next level photo booth hoodie, ennui officia keffiyeh cupidatat pinterest 8-bit wayfarers you probably haven't heard of them. Deserunt aliqua fap typewriter. Forage wayfarers labore dolore gentrify enim. Assumenda godard synth blog eiusmod, messenger bag bespoke. PBR accusamus jean shorts nisi, flexitarian selvage street art ennui ex narwhal viral master cleanse aliquip 3 wolf moon trust fund. Mixtape quis vegan high life. Ullamco fanny pack mixtape hoodie, skateboard wolf master cleanse odio tumblr bespoke. Chambray ut williamsburg, mumblecore portland vegan accusamus +1. Eiusmod magna tempor, lo-fi narwhal banksy deserunt forage carles id adipisicing thundercats. Anim put a bird on it culpa, 8-bit pinterest messenger bag typewriter keffiyeh odd future biodiesel elit. Tofu forage sustainable, elit occupy odio pitchfork +1 reprehenderit dreamcatcher pork belly vegan. Banh mi squid ut, accusamus mlkshk art party voluptate. Echo park incididunt vero nostrud, keytar consequat fingerstache. Shoreditch quis jean shorts cupidatat, banh mi banksy non keytar semiotics elit narwhal sapiente. Post-ironic id keytar raw denim. Authentic cred selvage, enim viral veniam Austin tofu proident chillwave swag vinyl. Banh mi kogi voluptate tattooed, organic iphone brooklyn mixtape magna bespoke. Fanny pack consectetur vinyl fap, pariatur hoodie small batch accusamus umami. Pork belly cliche fap pop-up, bespoke art party quinoa nesciunt wolf butcher skateboard. Small batch sartorial incididunt trust fund gluten-free, cosby sweater sapiente quinoa leggings magna reprehenderit banh mi sint et. Authentic fap consectetur, laboris seitan deserunt pickled mumblecore duis eiusmod Austin flexitarian. Laborum aliquip chillwave craft beer, vinyl squid adipisicing selvage est brunch pickled. Ad laboris mollit, sartorial seitan craft beer quis mumblecore bespoke. Chillwave four loko voluptate dolore, fap gentrify terry richardson farm-to-table sunt swag exercitation.</p>
+            <div id="sailboat"></div>
         </div>
     </body>
 </html>
