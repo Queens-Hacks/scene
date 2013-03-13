@@ -49,20 +49,20 @@ table {
 }
 
 @keyframes sundown {
-	from {left: -10%}
-	to {left: 10%;}
+	33% {top: -240px;}
+	100% {top: 50%;}
 }
 @-moz-keyframes sundown { /* Firefox */
-	from {left: -10%}
-	to {left: 10%;}
+	33% {top: -240px;}
+	100% {top: 50%;}
 }
 @-webkit-keyframes sundown { /* Safari and Chrome */
-	from {left: -10%}
-	to {left: 10%;}
+	33% {top: -240px;}
+	100% {top: 50%;}
 }
 @-o-keyframes sundown { /* Opera */
-	from {left: -10%}
-	to {left: 10%;}
+	33% {top: -240px;}
+	100% {top: 50%;}
 }
 
 @keyframes lroscillate {
@@ -99,36 +99,75 @@ table {
 	to {right: 10%;}
 }
 
+html {
+	height: 100%;
+}
 body {
+	height: 100%
 	position: relative;
+	background-color: #ddeeff;
+}
+#sun {
+	position: absolute;
+	height: 240px;
+	width: 240px;
+	top: 30%;/*-240px;*/
+	left: 50%;
+	margin-left: -120px; 
+	background-color: #ffffcc;
+
+	box-shadow: 0 0 60px 30px rgba(255, 255, 136, 1) inset,
+			0 0 60px rgba(255, 255, 85, 1) inset,
+			0 -45px 120px 60px rgba(255, 238, 128, 1),
+			0 -25px 240px 120px rgba(255, 204, 85, 1),
+			0 25px 360px 240px rgba(255, 119, 68, 0.8),
+			0 80px 360px 360px rgba(255, 68, 68, 0.4),
+			0 0 1200px 480px rgba(221, 34, 34, 0.2);
+
+	-webkit-border-radius: 120px;
+	-moz-border-radius: 120px;
+	border-radius: 120px;
+
+	animation: sundown 20s ease-out infinite;
+	-moz-animation: sundown 20s ease-out infinite;
+	-webkit-animation: sundown 20s ease-out infinite;
+	-o-animation: sundown 20s ease-out infinite;
+}
+#sun:before {
+	position: absolute;
+	z-index: -1;
+	top: 120px;
+	left: -420px;
+	content: '';
+	width: 1080px;
+	height: 0;
+	box-shadow: -360px 0 240px 120px rgba(255, 85, 85, 0.8),
+			360px 0 240px 120px rgba(255, 85, 85, 0.8);
 }
 p {
 	position: relative;
 	text-align: center;
 }
-p:nth-child(1) {
+#water p:nth-child(1) {
 	animation: lroscillate 5s ease-in-out infinite alternate;
-	/* Firefox: */
 	-moz-animation: lroscillate 5s ease-in-out infinite alternate;
-	/* Safari and Chrome: */
 	-webkit-animation: lroscillate 5s ease-in-out infinite alternate;
-	/* Opera: */
 	-o-animation: lroscillate 5s ease-in-out infinite alternate;
 }
-p:nth-child(2) {
+#water p:nth-child(2) {
 	animation: rloscillate 5s ease-in-out infinite alternate;
-	/* Firefox: */
 	-moz-animation: rloscillate 5s ease-in-out infinite alternate;
-	/* Safari and Chrome: */
 	-webkit-animation: rloscillate 5s ease-in-out infinite alternate;
-	/* Opera: */
 	-o-animation: rloscillate 5s ease-in-out infinite alternate;
 }
 	</style>
 </head>
 <body>
-	<p>this is some water</p>
-	<p>this is some water</p>
+	<div id='sun'></div>
+	<div id="water">
+		<p>this is some water</p>
+		<p>this is some water</p>
+	</div>
 	<!-- Phil smells like pee pee -->
 </body>
 </html>
